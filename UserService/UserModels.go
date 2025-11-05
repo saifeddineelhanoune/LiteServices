@@ -32,4 +32,13 @@ func PostUsers(ctx	*gin.Context) {
 	ctx.JSON(http.StatusCreated, Users)
 }
 
+func GetUserById(ctx *gin.Context) {
+	for _, a := range Users {
+		if a.ID == ctx.Param("id") {
+			ctx.JSON(http.StatusOK, a)
+			return
+		}
+	}
+	ctx.JSON(http.StatusNotFound, gin.H{"message": "the user you are looking for is not found"})
+}
 
