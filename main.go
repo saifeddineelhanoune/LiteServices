@@ -1,13 +1,13 @@
 package main
 
 import (
-	"fmt"
+	"microservices/UserService"
+
 	"github.com/gin-gonic/gin"
-	"github.com/saifeddineelhanoune/LiteServices/UserService"
 )
 
 func main() {
 	route := gin.Default()
-	route.GET("/users", getUsers)
+	route.GET("/users", UserService.GetUsers)
 	route.Run(":8000")
 }
