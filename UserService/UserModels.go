@@ -22,4 +22,14 @@ func GetUsers(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, Users)
 }
 
+func PostUsers(ctx	*gin.Context) {
+	var newUser User
+
+	if err := ctx.BindJSON(&newUser); err != nil {
+		return
+	}
+	Users = append(Users, newUser)
+	ctx.JSON(http.StatusCreated, Users)
+}
+
 

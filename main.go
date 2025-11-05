@@ -9,5 +9,6 @@ import (
 func main() {
 	route := gin.Default()
 	route.GET("/users", UserService.GetUsers)
-	route.Run(":8000")
+	route.POST("/users", UserService.PostUsers)
+	route.Run(":5000")
 }
