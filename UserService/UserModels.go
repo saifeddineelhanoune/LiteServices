@@ -1,4 +1,4 @@
-package UserService
+package main
 
 import (
 	"net/http"
