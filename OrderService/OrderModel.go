@@ -2,6 +2,8 @@ package main
 
 import (
 	"net/http"
+
+	"github.com/gin-gonic/gin"
 )
 
 // Request to create an order
@@ -30,3 +32,10 @@ type OrderItem struct {
     Quantity    int     `json:"quantity"`
 }
 
+func main () {
+    route := gin.Default()
+    route.GET("/", func(ctx *gin.Context) {
+        ctx.JSON(http.StatusOK, gin.H{"message": "mvp"})
+    })
+    route.Run("127.0.0.1:5002")
+}
