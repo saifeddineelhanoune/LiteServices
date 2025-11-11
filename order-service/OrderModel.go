@@ -56,8 +56,8 @@ var orders = []Order{}
 var orderCounter = 1
 
 const (
-	UserServiceURL    = "http://127.0.0.1:5000"
-	ProductServiceURL = "http://127.0.0.1:5001"
+	UserServiceURL    = "http://user-service:5000"
+	ProductServiceURL = "http://product-service:5001"
 )
 
 func main() {
@@ -70,7 +70,7 @@ func main() {
 	route.GET("/orders", GetOrders)
 	route.GET("/orders/:id", GetOrderById)
 
-	route.Run("127.0.0.1:5003")
+	route.Run("0.0.0.0:5003")
 }
 
 func CreateOrder(ctx *gin.Context) {

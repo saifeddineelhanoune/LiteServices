@@ -11,5 +11,5 @@ func main() {
 	route.GET("/users/:id", GetUserById)
 	route.PUT("/users/:id", UpdateUserById)
 	route.DELETE("/users/:id", DeleteUserById)
-	route.Run("127.0.0.1:5000")
+	route.Run("0.0.0.0:5000")
 }

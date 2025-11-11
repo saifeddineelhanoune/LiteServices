@@ -1,12 +1,11 @@
-FROM debian:bookworm-slim
+FROM golang:1.23-bookworm
 
-RUN apt-get update && \
-    apt-get install golang -y\
-    && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /app
 
-COPY . /app
+COPY . .
+
+RUN go mod download
 
 EXPOSE 5000
 
