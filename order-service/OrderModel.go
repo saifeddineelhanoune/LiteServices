@@ -70,7 +70,7 @@ func main() {
 	route.GET("/orders", GetOrders)
 	route.GET("/orders/:id", GetOrderById)
 
-	route.Run("0.0.0.0:5003")
+	route.Run("0.0.0.0:5002")
 }
 
 func CreateOrder(ctx *gin.Context) {
